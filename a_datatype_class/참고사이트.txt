@@ -1,0 +1,12 @@
+﻿도움말 : ctrl + q
+
+[참고 사이트]
+    https://docs.python.org/3.7/library/index.html
+
+    https://dojang.io       -> 회원가입하고 퀴즈문제 하나씩 푸는 것이 도장깨기
+    https://wikidocs.net/   -> 파이썬 검색
+    https://wikidocs.net/book/2454
+    http://pythonstudy.xyz/
+    https://python.bakyeono.net/
+
+[참고] 파이썬 정규식 표현 : https://wikidocs.net/4308

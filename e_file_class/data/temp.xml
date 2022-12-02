@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<employees>
+    <employee>
+        <no>1</no>
+        <name>김</name>
+        <job>책임</job>
+    </employee>
+    <employee>
+        <no>2</no>
+        <name>박</name>
+        <job>선임</job>
+    </employee>
+    <employee>
+        <no>3</no>
+        <name>이</name>
+        <job>연구원</job>
+    </employee>
+</employees>

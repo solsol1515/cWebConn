@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<items>
+    <fruit>
+        <name>사과</name>
+        <price>500</price>
+        <count>3</count>
+    </fruit>
+    <fruit>
+        <name>망고</name>
+        <price>200</price>
+        <count>2</count>
+    </fruit>
+    <fruit>
+        <name>딸기</name>
+        <price>400</price>
+        <count>10</count>
+    </fruit>
+    <item>
+        <name>과자</name>
+        <price>100</price>
+        <count>10</count>
+    </item>
+    <item>
+        <name>커피</name>
+        <price>10</price>
+        <count>20</count>
+    </item>
+</items>

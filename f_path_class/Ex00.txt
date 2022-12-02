@@ -1,0 +1,67 @@
+[참고]  https://docs.python.org/3/
+
+********************************************************************
+@ pathlib가 제공하는 클래스
+
+    클래스 이름	            설명	                                    기반 클래스
+    pathlib.PurePath	    순수 경로 클래스의 기반 클래스	            없음
+    pathlib.PurePosixPath	Windows 이외 용도의 순수 경로 클래스	    PurePath
+    pathlib.PureWindowsPath	Windows용 순수 경로 클래스	                PurePath
+    pathlib.Path	        구상 경로 클래스의 기반 클래스	            PurePath
+    pathlib.PosixPath	    Windows 이외 용도의 구상 경로 클래스	    PurePosixPath, Path
+    pathlib.WindowsPath	    Windows용 구상 경로 클래스	                PureWindowsPath, Path
+
+    PurePath, Path는 인스턴스화하면 플랫폼에 따라 적절한 서브클래스를 반환하므로,
+    명시적으로 서브클래스를 이용하는 경우는 많지 않습니다.
+
+********************************************************************
+@ 구상 경로 다루기 - Path
+    Path는 구상 경로의 기반 클래스입니다.
+    인스턴스화하면 Windows일 때는 WindowsPath 클래스,
+    Windows가 아닐 때는 PosixPath 클래스의 인스턴스 객체가 됩니다.
+    구상 경로의 기능은 파일 시스템에 접근하기 때문에, 기본적으로 운영체제 상에 조작 대상 파일 경로가 존재해야 합니다.
+
+@ Path 클래스의 메서드
+    함수 이름	    설명                                                          	    반환값
+    Path.cwd()	    현재 디렉터리를 나타내는 경로 객체를 반환한다. 클래스 메서드이다.	경로 객체
+    Path.chmod(mode)경로의 권한(permission)을 변경한다.	                                None
+    Path.exists()	경로가 존재하면 True를 반환한다.	                                bool
+    Path.glob(pattern)	경로가 가리키는 디렉터리 아래의 pattern에 일치하는 파일을 경로 객체로서 반환하는 발생자(generator)를 반환한다.	발생자
+    Path.is_dir()	경로가 디렉터리면 True를 반환한다.                               	bool
+    Path.is.file()	경로가 파일이면 True를 반환한다.	                                bool
+    Path.iterdir()	경로 아래에 존재하는 파일이나 디렉터리를 경로 객체로서 반환하는 발생자를 반환한다.	발생자
+    Path.mkdir(mode=0o777, parents=False)	경로를 새로운 디렉터리로 생성한다.	        None
+    Path.rename(target)	경로의 이름을 변경한다. 인수 target에는 문자열이나 경로 객체를 지정한다.	None
+    Path.resolve()	경로를 절대 경로로 하고, 심볼릭 링크를 해제한다.	                경로 객체
+    Path.rmdir()	경로가 가리키는 디렉터리를 삭제한다.	                            None
+
+
+********************************************************************
+@ 순수 경로 다루기 - PurePath
+    PurePath는 순수 경로의 기반 클래스입니다.
+    인스턴스화하면 Windows일 때는 PureWindowsPath 클래스,
+    Windows가 아닐 떄는 PurePosixPath 클래스의 인스턴스 객체가 됩니다.
+    순수 경로의 기능은 파일 시스템에 접근하지 않기 때문에,
+    운영체제 상에 존재하지 않는 파일 경로를 다룰 수도 있습니다.
+
+--------------------------------------------------------------------
+@ PurePath 클래스의 속성
+    속성 이름	        설명	                                        반환값
+    PurePath.drive	    WindowsPath일 때는 드라이브                        문자
+                        PosixPath일 때 빈 문자를 반환한다.	                str
+    PurePath.root	    루트를 나타내는 문자를 반환한다.	                str
+    PurePath.anchor	    드라이브와 루트를 결합한 문자열을 반환한다.	        str
+    PurePath.parents	경로의 상위 경로에 접근할 수 있는 시퀀스이다.	    경로 객체를 요소로 하는 시퀀스
+    PurePath.parent	    경로의 바로 위 경로이다.	                        경로 객체
+    PurePath.name	    경로 요소의 맨 끝을 나타내는 문자열을 반환한다.	    str
+    PurePath.suffix	    경로 요소의 맨 끝에 확장자가 있으면 해당 확장자를 반환한다.	str
+    PurePath.suffixes	경로 요소의 맨 끝 확장자를 리스트로 반환한다.	    list
+    PurePath.stem	    경로 요소의 맨 끝에서 확장자를 빼고 반환한다.	    str
+
+@ PurePath 클래스의 메서드
+    함수 이름	                설명	                                                반환값
+    PurePath.is_absolute()	    경로가 절대 경로이면 True를 반환한다.	                bool
+    PurePath.joinpath(*other)	경로에 인수 other로 지정한 모든 경로를 연결한다.	    경로 객체
+    PurePath.match(pattern)	    glob 형식의 이누 pattern과 일치하면 True를 반환한다.	bool
+
+
