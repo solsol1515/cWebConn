@@ -64,7 +64,7 @@ print(quiz_1(tuple_1, tuple_2))
 '''
 def even_filter(numbers):
     list = []
-    for i in numbers:
+    for i in numbers:               # 입력 받은 배열 수만큼 반복
         if i % 2 == 0 :
             list.append(i)
     print(list)
@@ -82,6 +82,7 @@ even_filter([1, 2, 4, 5, 8, 9, 10])
         False
         True
 '''
+
 def is_prime_number(num):       # num 입력받아 소수인지 아닌지 구분하는 함수
     # num이 1이 아니면
 
