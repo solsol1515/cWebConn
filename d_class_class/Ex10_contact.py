@@ -2,35 +2,46 @@
 class Contact:
     def __init__(self, name, phone_number, email, addr):
         self.name=name
-        self.phone_name=phone_number
+        self.phone_number=phone_number
         self.email=email
         self.addr=addr
 
     def print_info(self):
-        print("이름:", self.name)
-        print("전화번호:", self.phone_name)
-        print("이메일:", self.email)
-        print("주소;", self.addr)
+        print("이름:{0} \n"
+              "전화번호:{1} \n"
+              "이메일:{2}\n"
+              "주소:{3}\n".format(self.name,self.phone_number,self.email,self.addr))
+
+def set_contact():
+    print('set_contact')
+    name = input("이름")
+    phone = input("전화번호")
+    email = input("이메일")
+    addr = input("주소")
+    contact = Contact(name, phone, email, addr)
+    return contact
+
+def get_contact(contact_list):
+    for i in contact_list:
+        i.print_info()
 
 def print_menu():
     print('1. 연락처 입력')
     print('2. 연락처 출력')
     print('3. 연락처 삭제')
     print('4. 종료')
-    menu=input('메뉴선택:')
+    menu = input('메뉴선택:')
     return int(menu)
 
-def set_contact():
-    # 여기에 코드 작성
-    pass
-
 def print_contact(contact_list):
-    # 여기에 코드 작성
-    pass
+    for i in contact_list:
+        i.print_info()
+
 
 def delete_contact(contact_list, name):
-    # 여기에 코드 작성
-    pass
+    for i, t in enumerate(contact_list):
+        if t.name == name:
+            del contact_list[i]
 
 def run():
     # Contact 인스턴스를 저장할 리스트 자료구조 생성
