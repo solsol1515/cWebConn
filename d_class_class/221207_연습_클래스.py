@@ -190,3 +190,4 @@ bb = student_john.total_grade()         # grade를 return
 print(aa,bb,student_john.score,student_john.grade)
 '''
 # None F 72.0 F
+# return 값이 없어서 None / assignment = 0 > assign_score가
