@@ -1,0 +1,27 @@
+
+
+1. selenium
+    - 주로 웹앱을 테스트하는데 이용하는 프레임워크
+    - 웹 브라우저를 원격으로 조작할 때 사용
+    - 자동으로 URL을 열고 클릭, 스크롤, 문자 입력등의 동작을 조작할 수 있다.
+    - webdriver라는 API를 통해 운영체제에 설치된 Chrome등의 브라우저를 제어하게 된다.
+
+    [설치]  메뉴 > File > Settings > Project Interpreter > + 버튼
+     selenium 검색 후 인스톨
+        > pip install selenium
+
+    [참고] Selenium의 버전은 자주 업데이트 되고, 브라우저의 업데이트 마다 새로운 Driver를 잡아주기 때문에
+        항상 최신버전을 깔아 주는 것이 좋다.
+
+    [매뉴얼]
+    ` https://selenium-python.readthedocs.io/index.html
+    ` https://docs.seleniumhq.org/docs/
+
+
+2. 크롬 웹드라이버 ( Chrome WebDriver )
+
+    [다운로드] http://chromedriver.chromium.org/downloads
+        chromedirver_win32.zip 파일 다운로드 받고 압축풀기
+
+
+

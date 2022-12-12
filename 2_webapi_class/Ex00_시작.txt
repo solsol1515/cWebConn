@@ -1,0 +1,15 @@
+
+* API (Application Programming Interface)
+    :  어느 프로그램 기능을 외부 프로그램에서 사용할 수 있도록 만든 것
+       즉 서로 다른 프로그램이 기능을 공유할 수 있도록 한 것
+
+
+** Web API
+    : 웹상의 많은 정보를 공유할 수 있도록 제공하는 것
+    단점은 해당 제공자의 사정에 의해 변동이 심하다.
+
+    ` 다음 개발자 센터
+    ` 네이버 개발자 센터
+    ` 구글 개발자 센터
+    ` [그외] https://www.apistore.co.kr/api/apiList.do
+

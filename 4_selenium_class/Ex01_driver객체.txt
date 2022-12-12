@@ -1,0 +1,39 @@
+* Selenium은 driver객체를 통해 여러가지 메소드를 제공한다.
+
+
+[ URL에 접근하는 api ]
+
+get(‘http://url.com’)
+
+
+1. DOM 내부에 있는 여러 요소 중 첫 번째 요소(element) 찾는다.
+
+find_element_by_name(‘HTML_name’)
+find_element_by_id(‘HTML_id’)
+find_element_by_css_selector(‘#css > div.selector’)
+find_element_by_class_name(‘some_class_name’)
+find_element_by_tag_name(‘h1’)
+find_element_by_xpath(‘/html/body/some/xpath’) : xpath 지정하여 해당 요소 추출
+find_element_by_link_text(‘text’) : 링크 텍스트로 요소 추출
+
+2. DOM에서 모든 요소 추출
+find_elemens_by_css_selector(‘#css > div.selector’)
+find_elements_by_class_name(‘some_class_name’)
+find_elements_by_tag_name(‘h1’)
+
+3. DOM 요소에 적용할 수 있는 메소드와 속성
+clear()             : 글자를 지움
+click()             : 클릭
+get_attribute(name) : 요소의 속성 name에 해당하는 값을 추출
+is_displayed()      : 요소가 화면에 출력되는지 확인
+is_enabled()
+is_selected()
+execute_script()
+save_screenshot(filename)
+submit()
+
+외에도 많은 속성과 메소드가 있습니다.
+
+또한 각 브라우저 드라이버 객체의 속성도 있습니다.
+
+
