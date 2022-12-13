@@ -17,16 +17,17 @@ import Ex07_alldown2
 
 # ------------------------------------------------------
 # (3) 이미 처리한 파일인지 확인하기 위한 변수
-proc_files = {}
+proc_files = {}                         # dict(딕셔너리)
 
 # HTML을 분석하고 다운받는 함수
-def analyze_html(url, root_url):
+def analyze_html(url, root_url):        # root_url에 url 저장(고정으로 사용하기 위해서)
     # (1)
     print("analyze_html=", url)
     savepath = Ex07_alldown2.download_file(url)
     if savepath is None: return
-    if savepath in proc_files: return # 이미 처리된 파일이면 실행하지 않음
-    proc_files[savepath] = True
+    if savepath in proc_files: return   # 이미 처리된 파일이면 실행하지않고 리턴(다시 다운받지 않도록)
+    proc_files[savepath] = True         # 없는 파일은 딕셔너리에
+    # proc_files = {'https://docs.python.org/3.5/library/':True} 형태로 저장
     # print(proc_files)
 
 
@@ -40,7 +41,7 @@ def analyze_html(url, root_url):
             continue
 
         # HTML이라면
-        if re.search(".html$", link_url):
+        if re.search(".html$", link_url):       # .html로 끝나는 파일이라면?
             # 재귀적으로 HTML 파일 분석하기
             analyze_html(link_url, root_url)
             continue

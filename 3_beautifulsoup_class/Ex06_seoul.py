@@ -37,3 +37,32 @@ soup = BeautifulSoup(site1,"html.parser")
       구청전화번호 : TEL. 02-3396-4114
       구청홈페이지 : http://www.junggu.seoul.kr
 '''
+items = soup.select('.call-list ul .tabcont')
+
+for item in items:
+    # 구청 이름
+    name = item.select_one('strong').text.strip()
+    #print(name)
+    구청이름.append(name)
+
+    li = item.select('ul li')
+    # 구청 주소
+    addr = li[0].text.strip()
+    구청주소.append(addr)
+
+    # 구청 전화번호
+    pLi = li[1].text.split('. ')
+    phone = pLi[-1].strip()
+    #print(콜)
+    구청전화번호.append(콜)
+
+    # 구청 홈페이지
+    page = li[2].select_one('a').text.strip()
+    구청홈페이지.append(page)
+
+for i in range(len(구청이름)):
+    print('구청이름 :', 구청이름[i])
+    print('구청 주소 :', 구청주소[i])
+    print('구청 전화번호 :', 구청전화번호[i])
+    print('구청 홈페이지 :', 구청홈페이지[i])
+    print('-'*50)
