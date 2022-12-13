@@ -1,7 +1,7 @@
 import cx_Oracle as oci
 from selenium import webdriver
 from bs4 import BeautifulSoup
-import time
+import time                         # 사용 안 했음
 import folium
 
 import API
