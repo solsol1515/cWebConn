@@ -71,7 +71,7 @@ for page_no in range(1, 75):
         # 주소가 같은 행에 위도, 경도 추가 (update)
         sql2 = '''
             UPDATE jadam3
-            SET wido = :0 ,
+            SET wido = :0,
                 gydo = :1
             WHERE addr = :2
         '''
@@ -93,7 +93,7 @@ for page_no in range(1, 75):
                           icon=folium.Icon(color='green', icon='star')).add_to(map_osm)
 
         # [1] ,를 구분자로 하여 파일에 값 입력
-        f.write(res[0] + ',' +  res[1] + ',' + res[2] + ',' + res2[0] + ',' + res2[1]+'\n')
+        f.write(res[0] + ',' + res[1] + ',' + res[2] + ',' + res2[0] + ',' + res2[1]+'\n')
 
 
 map_osm.save('./map/map.html') # 지도 저장
